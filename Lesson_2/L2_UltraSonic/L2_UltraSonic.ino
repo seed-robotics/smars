@@ -1,3 +1,4 @@
+#include <Ultrasonic.h>
 #include "AFMotor.h"
 
 #define minDistance 15
@@ -8,31 +9,15 @@
 
 
 
-
-
-
-
-
-
 AF_DCMotor motorR(1);  // right DC Motor
 AF_DCMotor motorL(4);  // left DC Motor
-
-
-
-
-
-
-
-
-
-
-
+Ultrasonic ultrasonic(9, 10); // echo grey pin 10 ; trig white pin 9
 void setup() {
   Serial.begin(9600);
-  motorR.setSpeed(200);
-  delay(1)
-  motorL.setSpeed(200);
 
+
+  motorR.setSpeed(200);
+  motorL.setSpeed(200);
   motorR.run(RELEASE);
   motorL.run(RELEASE);
 }
@@ -79,5 +64,16 @@ void turnAround(int timeDelay) {
 
 
 void loop() {
+  uint8_t distance;
+  distance = ultrasonic.read(CM);
 
+  if (distance < minDistance){
+    turnAround(delayRotate);
+  }
+  else
+  {
+    moveForwards(delayForwards);
+  }
+
+  delay(delayLoop);
 }
