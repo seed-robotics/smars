@@ -20,6 +20,19 @@ Frequencies for channel 3 & 4 are:
 * MOTOR34_1KHZ 
 
 
+## setSpeed(speed)
+
+#### Sets the speed of the motor.
+
+#### Parameters:
+* ###  speed- Valid values for 'speed' are between 0 and 255 with 0 being off and
+255 as full throttle.
+
+#### Example:
+```
+ motor1.setSpeed(255); // Set motor 1 to maximum speed
+ motor4.setSpeed(127); // Set motor 4 to half speed
+```
 
 ## run(cmd)
 
