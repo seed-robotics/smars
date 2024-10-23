@@ -28,7 +28,7 @@ void recvWithEndMarker() {
             }
         }
         else {
-            receivedChars[ndx] = '\0'; // terminate the string
+            receivedChars[ndx] = '\n'; // terminate the string
             ndx = 0;
             newData = true;
         }
