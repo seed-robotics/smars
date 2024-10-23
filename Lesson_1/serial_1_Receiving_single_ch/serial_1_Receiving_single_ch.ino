@@ -1,5 +1,5 @@
 char  receivedChar;
-boolean newData = *****;
+boolean newData = false;
 
 
 void setup() {
@@ -8,7 +8,7 @@ void setup() {
 }
 
 void loop() {
-******
+rcvOneChar();
 ******
 }
 
