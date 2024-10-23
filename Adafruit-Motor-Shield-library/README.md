@@ -21,4 +21,31 @@ Frequencies for channel 3 & 4 are:
 
 
 
+## run(cmd)
+
+Sets the run-mode of the motor.
+
+#### Parameters:
+cmd - the desired run mode for the motor
+
+#### Valid values for cmd are:
+
+* FORWARD - run forward (actual direction of rotation will depend on motor wiring)
+
+* BACKWARD - run backwards (rotation will be in the opposite direction from FORWARD)
+
+* RELEASE - Stop the motor.  This removes power from the motor and is equivalent to setSpeed(0).  The motor shield does not implement dynamic breaking, so the motor may take some time to spin down
+
+##### Example:
+
+``` python
+motor.run(FORWARD);
+delay(1000);  // run forward for 1 second
+motor.run(RELEASE);
+delay(100);  // 'coast' for 1/10 second
+motor.run(BACKWARDS);  // run in reverse
+
+```
+
+
 
